@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Admin Dashboard</h1>
+  </header>
+  <main class="container">
+    <section>
+      <h2>Charity Management</h2>
+      <form id="addCharityForm">
+        <label for="charityName">Charity Name:</label>
+        <input type="text" id="charityName" required>
+
+        <label for="charityDescription">Description:</label>
+        <textarea id="charityDescription" required></textarea>
+
+        <button type="submit">Add Charity</button>
+      </form>
+
+      <div id="charityList">
+        <!-- Charities will be dynamically loaded here -->
+      </div>
+    </section>
+
+    <section>
+      <h2>Donation Statistics</h2>
+      <div id="donationStats">
+        <!-- Donation 

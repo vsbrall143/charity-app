@@ -1,0 +1,35 @@
+# Initialize the project (if not done already)
+npm init -y
+
+# Core dependencies
+npm install express sequelize mysql2 dotenv
+
+# Validation
+npm install express-validator
+
+# Error handling and logging
+npm install winston
+
+# Security
+npm install helmet cors
+
+# API request handling (optional, if needed)
+npm install axios
+
+# Optional for password encryption or authentication
+npm install bcrypt jsonwebtoken
+
+
+# install all in one go
+
+npm install express sequelize mysql2 dotenv express-validator winston helmet cors bcrypt jsonwebtoken axios
+npm install --save-dev nodemon eslint
+
+
+# add this in package.json
+"scripts": {
+  "start": "node server.js",
+  "dev": "nodemon server.js"
+}
+now simply run this command
+# npm run dev
