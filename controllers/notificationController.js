@@ -1,4 +1,5 @@
-const emailService = require('../services/emailService'); // Abstracted email logic
+// const emailService = require('../services/emailService'); // Abstracted email logic
+require('dotenv').config();
 
 exports.sendDonationReceipt = async (req, res) => {
   try {
@@ -34,7 +35,7 @@ exports.sendDonationReceipt = async (req, res) => {
   }
 };
 
-const paymentService = require('../services/paymentService');
+// const paymentService = require('../services/paymentService');
 
 exports.processDonation = async (req, res) => {
   const { amount, charityId } = req.body;

@@ -18,12 +18,20 @@ const Project = sequelize.define('Project', {
   charity_id: {
     type: DataTypes.UUID,
     allowNull: false,
-    references: {
-      model: 'Charities', // References the Charity model
-      key: 'id',
-    },
-    onDelete: 'CASCADE', // Deletes associated projects if the charity is deleted
   },
+  imageUrl: {
+    type: DataTypes.STRING, // Store the image path
+    allowNull: true,
+  },
+  target: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  current: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+
 }, {
   timestamps: true, // Automatically adds createdAt and updatedAt fields
 });

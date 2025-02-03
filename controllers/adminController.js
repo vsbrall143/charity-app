@@ -1,5 +1,7 @@
 const User = require('../models/User');
 const Charity = require('../models/Charity');
+require('dotenv').config();
+
 
 exports.getAllUsers = async (req, res) => {
   try {

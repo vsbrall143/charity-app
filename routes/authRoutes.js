@@ -1,5 +1,5 @@
 const express = require('express');
-const { register, login } = require('../controllers/authController');
+const { register, login ,charitylogin,charityregister } = require('../controllers/authController');
 const { getUserProfile, updateUserProfile } = require('../controllers/userController');
 const { authenticate } = require('../middlewares/authMiddleware');
 
@@ -9,8 +9,12 @@ const router = express.Router();
 router.post('/register', register); // User registration
 router.post('/login', login); // User login
 
+router.post('/charityregister', charityregister); // User registration
+router.post('/charitylogin', charitylogin); // User login
+
 // Protected routes
 router.get('/profile', authenticate, getUserProfile); // Get user profile
 router.put('/profile', authenticate, updateUserProfile); // Update user profile
 
 module.exports = router;
+ 

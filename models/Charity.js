@@ -11,14 +11,29 @@ const Charity = sequelize.define('Charity', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  description: {
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true, 
+  },
+  password: {
+    type: DataTypes.STRING, 
+    allowNull: false,
+  },
+  mission: {
     type: DataTypes.TEXT,
     allowNull: false,
   },
-  goal: {
-    type: DataTypes.FLOAT,
-    allowNull: false,
+  registrationNumber: {
+    type: DataTypes.STRING,
+    allowNull: false, 
+    unique: true, 
   },
+  approve: {
+    type: DataTypes.INTEGER,
+    defaultValue:0
+  }
+
 }, {
   timestamps: true,
 });

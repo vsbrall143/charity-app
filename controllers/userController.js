@@ -1,5 +1,6 @@
 const User = require('../models/User');
-const Donation = require('../models/Donation');
+ 
+require('dotenv').config();
 
 exports.getUserProfile = async (req, res) => {
   try {

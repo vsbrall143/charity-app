@@ -52,3 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
     loadNotifications();
   });
   
+
+  function logout() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("charitytoken");
+  
+    window.location.href = "index.html"; // Or the correct path to your index page
+  }
+  
+  
