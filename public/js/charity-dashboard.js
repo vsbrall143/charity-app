@@ -36,7 +36,7 @@ async function loadProjects() {
 
 
   try {
-    const response = await axios.get(`https://charity-app-5acl.onrender.com/allprojects/${charityid}`);
+    const response = await axios.get(`https://charity-app-olh6.onrender.com/allprojects/${charityid}`);
     const projects = response.data; // Assuming the response is an array of projects
 
     if (projects.length > 0) {
@@ -46,7 +46,7 @@ async function loadProjects() {
 
         // Check if project has an image
         const imageHtml = project.imageUrl
-          ? `<img src="https://charity-app-5acl.onrender.com${project.imageUrl}" alt="${project.title}" class="project-image">`
+          ? `<img src="https://charity-app-olh6.onrender.com${project.imageUrl}" alt="${project.title}" class="project-image">`
           : '<p>No image available</p>';
 
         projectDiv.innerHTML = `
