@@ -1,4 +1,25 @@
-/* Global Styles */
+ /* Basic styling for the filter labels */
+ 
+label {
+  display: inline-flex;            /* This aligns the checkbox and label on the same line */
+  align-items: center;             /* Ensures vertical alignment of checkbox and label text */
+  margin-bottom: 8px;              /* Adds space between each checkbox */
+}
+
+/* Optional: Add margin between the checkbox and label */
+input[type="checkbox"] {
+  margin-right: 5px;               /* Space between checkbox and the label */
+}
+
+
+#main-container{
+
+  display: flex;
+}
+
+
+ 
+
 
 * {
   margin: 0;
@@ -7,26 +28,8 @@
   font-family: Arial, sans-serif;
 }
 
-/* Basic label and checkbox styling */
-label {
-  display: inline-flex;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-input[type="checkbox"] {
-  margin-right: 5px;
-}
-
-/* Main container */
-#main-container {
-  display: flex;
-}
-
-/* Body background */
 body {
-  background: #ffe5b4; /* Soft pastel orange */
-  color: #333;
+  background: rgb(255, 166, 0);
 }
 
 /* Navbar */
@@ -35,16 +38,18 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background: #2c2c2c;
-  color: #fff;
+  background: #000000;
+  color: white;
 }
 
+/* Logo */
 .logo {
   font-size: 24px;
-  color: #ffa726; /* Softer orange */
+  color: orange;
   font-weight: bold;
 }
 
+/* Navigation Links */
 .nav-links {
   display: flex;
   align-items: center;
@@ -57,13 +62,13 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: #ffa726;
+  color: orange;
   font-size: 18px;
-  transition: 0.4s;
+  transition: 0.8s;
 }
 
 .nav-links a:hover {
-  color: #64ffda; /* Soft teal hover */
+  color: #1abc9c;
 }
 
 /* Search Bar */
@@ -75,13 +80,13 @@ body {
 #searchCharity {
   padding: 8px 12px;
   font-size: 16px;
-  border: 2px solid #ffa726;
+  border: 2px solid orange;
   border-radius: 20px;
   outline: none;
-  background: #444;
+  background: #333;
   color: white;
   width: 180px;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
 #searchCharity::placeholder {
@@ -90,11 +95,11 @@ body {
 
 #searchCharity:focus {
   width: 220px;
-  background: #555;
-  border-color: #ffb74d;
+  background: #444;
+  border-color: #ff9900;
 }
 
-/* Hamburger Menu */
+/* Hamburger Menu for Mobile */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -108,35 +113,68 @@ body {
   margin: 5px;
 }
 
-/* Responsive Navbar */
+/* Responsive Design */
 @media screen and (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
     width: 100%;
-    background: #333;
     position: absolute;
     top: 60px;
     left: 0;
-    padding: 10px 0;
+    background: #2c3e50;
     text-align: center;
+    padding: 10px 0;
   }
 
   .nav-links.active {
     display: flex;
   }
 
+  .nav-links a.active {
+    color: cyan;
+    font-weight: bold;
+    border-bottom: 2px solid orange;
+  }
+
   .menu-toggle {
     display: flex;
   }
+
+  .search-container {
+    margin: 10px 0;
+  }
+
+  #searchCharity {
+    width: 100%;
+    max-width: 250px;
+  }
 }
 
-/* Charity List Container */
+
+/* 
+charity list  */
+
+
+
+
+
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: orange; /* Dark background */
+  color: orange; /* White text */
+}
+
+/* Container for charities */
 .charity-container {
   padding: 20px;
 }
 
-/* Grid Layout */
+/* Grid layout for charities and projects */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -145,71 +183,72 @@ body {
   margin-top: 20px;
 }
 
-/* Individual Charity and Project Items */
+/* Individual charity/project item */
 .charity-item, .project-item {
-  background: #303030;
+  background: #222; /* Dark grey background */
   padding: 20px;
   text-align: center;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 167, 38, 0.3);
-  transition: transform 0.4s, box-shadow 0.5s;
+  box-shadow: 0 0 10px rgba(255, 165, 0, .5); /* Orange glow */
+  transition: transform 0.6s, box-shadow 0.8s;
 }
 
 .charity-item:hover, .project-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 8px 15px rgba(255, 167, 38, 0.5);
+  box-shadow: 0px 6px 15px rgba(255, 165, 0, 0.5); /* Stronger glow on hover */
 }
 
 /* Buttons */
 button {
-  background-color: #ffa726;
-  color: #222;
+  background-color: #ff9800; /* Orange */
+  color: #000; /* Black text */
   border: none;
-  padding: 10px 20px;
+  padding: 10px 15px;
   margin-top: 10px;
-  border-radius: 50px;
   cursor: pointer;
-  transition: 0.3s;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s, transform 0.2s;
 }
 
 button:hover {
-  background-color: #ffb74d;
+  background-color: #e68900; /* Darker orange */
   transform: scale(1.05);
 }
 
-/* Progress Bar */
+/* Progress bar container */
 .progress-bar-container {
   margin: 10px 0;
 }
 
 .progress-bar {
   width: 100%;
-  background-color: #eee;
-  border-radius: 10px;
+  background-color: #444; /* Dark grey */
+  border-radius: 5px;
   overflow: hidden;
 }
 
 .progress {
   height: 10px;
-  background-color: #66bb6a; /* Soft green */
+  background-color: #ff9800; /* Orange */
 }
 
-/* Fade effect */
+/* Fade effect when showing projects */
 .fade {
   opacity: 0.3;
   pointer-events: none;
 }
 
-/* Project Modal Container */
+/* Hidden projects container */
 #projectListContainer {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(40, 40, 40, 0.95);
+  background: rgba(0, 0, 0, 0.95); /* Black overlay */
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 167, 38, 0.5);
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5); /* Orange glow */
   width: 80%;
   height: 80%;
   overflow-y: auto;
@@ -219,7 +258,7 @@ button:hover {
   display: none;
 }
 
-/* Project Image */
+/* Image styling */
 .project-image {
   width: 100%;
   max-height: 200px;
@@ -227,72 +266,309 @@ button:hover {
   border-radius: 10px;
 }
 
-/* Containers (Forms, Profiles) */
-.container, .container1, .container2 {
-  margin: 50px auto;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  #projectListContainer {
+    width: 90%;
+    height: 90%;
+  }
+}
+
+.container1 {
+  width: 300px;
+  margin: 50px ;
   padding: 50px;
-  background: #424242;
-  border-radius: 30px;
-  box-shadow: 0 0 10px rgba(255, 167, 38, 0.3);
-  border: 8px solid #2c2c2c;
+  background-color: #363636; /* Dark gray for contrast */
+  border-radius: 90px;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5); /* Orange glow */
+  border: 15px solid #000000; /* Add a 2px white border */
 }
 
-/* Profile Container */
+.container2 {
+  width: 900px;
+  margin: 50px ;
+  padding: 50px;
+  background-color: #363636; /* Dark gray for contrast */
+  border-radius: 100px;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5); /* Orange glow */
+  border: 15px solid #000000; /* Add a 2px white border */
+}
+
+/* Container styling */
+.container {
+  max-width: 600px;
+  margin: 50px auto ;
+  padding: 50px;
+  background-color: #363636; /* Dark gray for contrast */
+  border-radius: 100px;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5); /* Orange glow */
+  border: 15px solid #000000; /* Add a 2px white border */
+}
+
+/* Profile container styling */
 #profileContainer {
+  justify-items: center;
+  margin-bottom: 40px;
   padding: 40px;
-  border: 8px solid #2c2c2c;
-  background-color: #373737;
-  border-radius: 20px;
+  border: 10px solid #000000; /* Add a 2px white border */
+  background-color: #262626; /* Slightly lighter dark gray */
+  border-radius: 50px;
+  color: orange;
+
+ 
 }
 
-/* Form */
+/* Form styling */
 #updateForm {
   display: flex;
   flex-direction: column;
 }
 
-#updateForm h2, #updateForm label {
-  color: #ffa726;
+#updateForm h2 {
+  color: orange;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#updateForm label {
+  color: orange;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 #updateForm input {
   padding: 10px;
-  background-color: #2c2c2c;
-  border: 1px solid #ffa726;
-  color: #fff;
-  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 1px solid orange;
+  border-radius: 12px;
+  background-color: #333; /* Dark input background */
+  color: orange;
+  font-size: 16px;
 }
 
 #updateForm input:focus {
   outline: none;
-  border-color: #ffb74d;
-  box-shadow: 0 0 5px rgba(255, 183, 77, 0.5);
+  border-color: #ff8c42; /* Lighter orange for focus */
+  box-shadow: 0 0 5px rgba(255, 140, 66, 0.5); /* Glow effect */
 }
 
+/* Button styling */
 #updateForm button {
-  background-color: #ffa726;
-  font-size: 18px;
-  border-radius: 50px;
-  padding: 12px 20px;
-  margin-top: 10px;
-  transition: 0.3s;
+  padding: 15px 20px;
+  background-color: orange;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 120px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease; /* Added transform transition */
 }
 
 #updateForm button:hover {
-  transform: scale(1.05);
+   
+  transform: scale(1.1); /* Scale up by 1.1 times on hover */
 }
 
-/* Notification Item */
+#updateForm button:active {
+  background-color: #e67300; /* Darker orange on click */
+}
+
+
+
+
+
+ 
+  
+  header, footer {
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+ 
+  
+  button {
+    background-color:orange;
+    font-size: medium;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  
+  /* button:hover {
+    background-color: green;
+  }
+   */
+  input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+
+  /* Notifications Styles */
 .notification-item {
-  background-color: #fafafa;
-  border: 1px solid #ccc;
-  padding: 1rem;
-  border-radius: 8px;
-  margin: 10px 0;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .notification-item h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  .notification-item p {
+    margin: 0.5rem 0;
+  }
+  
+  .notification-item small {
+    color: rgb(255, 255, 255);
+  }
+  
+
+
+  
+  .charity-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 10px solid #000000;
+    border-radius: 30px;
+  }
+
+  .charity-item h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .charity-item p {
+    margin-bottom: 10px;
+  }
+
+  .project-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .project-item h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .project-item p {
+    margin-bottom: 5px;
+  }
+
+  #charityList button {
+    background-color: rgb(255, 166, 0);
+    color: white;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+
+  /* //donate button */
+
+  #projectList button {                
+    background-color:  orange;
+    color: black;
+    padding: 5px 10px;
+    border: none;
+    font-size: large;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+ 
+/* project box item */
+  .project-item {
+    border: 10px solid rgb(255, 166, 0);
+    border-radius: 40px;
+    padding: 15px;
+    margin: 15px 0;
+    background-color:rgb(24, 23, 23);
+    text-align: center;
+    max-width: 400px; /* Set a max width for each project */
+    box-shadow: 2px 20px 10px rgba(255, 255, 255, 0.1);
+  }
+  
+  .project-image {
+    width: 100%; /* Make image responsive */
+    max-width: 300px; /* Limit image size */
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Crop image to fit */
+    border-radius: 30px;
+    margin-top: 40px;
+  }
+  
+  .project-item h2 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  
+  .project-item p {
+    font-size: 16px;
+    color: #ffffff;
+  }
+  .project-item input {
+    background-color:rgb(0, 0, 0);
+    color:orange;
+    border-radius: 50px;
+    border: 3px solid rgb(255, 166, 0);
+  }
+  
+  
+ 
+
+
+/* Container for the progress bar */
+.progress-bar-container {
+  margin-top: 20px;
+  width: 100%;
+  
 }
 
-/* Donation History */
+/* Outer container of the progress bar */
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+/* Inner progress bar (this is what will change in width) */
+.progress {
+  height: 100%;
+  background-color: #42ff1d; /* Green color */
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+
+#project-heading{
+  color: #000;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 15px;;
+}
+
+
+/* Donation history container */
 #charityhistory {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -301,24 +577,18 @@ button:hover {
   margin-top: 20px;
 }
 
+/* Individual donation history item */
 .history-item {
-  background: #424242;
+  background: #222; /* Dark grey */
   padding: 15px;
-  border-radius: 20px;
-  box-shadow: 0px 4px 10px rgba(255, 167, 38, 0.3);
-  border: 6px solid #2c2c2c;
-  transition: 0.4s;
+  border-radius: 30px;
+  box-shadow: 0px 4px 8px rgba(255, 165, 0, 0.3); /* Orange glow */
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 10px solid #000000; /* Add a 2px white border */
 }
 
 .history-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 6px 12px rgba(255, 167, 38, 0.5);
-}
-
-/* Project Heading */
-#project-heading {
-  color: #222;
-  text-align: center;
-  font-size: 36px;
-  margin-top: 20px;
+  box-shadow: 0px 6px 12px rgb(255, 166, 0);
 }
