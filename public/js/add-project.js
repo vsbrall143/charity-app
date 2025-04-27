@@ -13,7 +13,7 @@ if (registerForm) {
 
     try {
       const token = localStorage.getItem('charitytoken'); // Get token from local storage
-      const res = await axios.post('https://charity-app-olh6.onrender.com/addproject', formData, {headers: { Authorization: token }});
+      const res = await axios.post('https://charity-app-3giw.onrender.com/addproject', formData, {headers: { Authorization: token }});
 //Since formData contains a file, Axios automatically sets the Content-Type to multipart/form-data.
        
       window.location.href = 'charity-dashboard.html'; // Redirect
